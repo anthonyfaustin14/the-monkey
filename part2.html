@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Pangolin font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Part 2 styles -->
+  <link rel="stylesheet" href="globals.css" />
+  <link rel="stylesheet" href="style.css" />
+
+  <title>Part 2: Tiger & Jungle</title>
+
+  <!-- Ensure the arrow sits on top and is clearly clickable -->
+  <style>
+    .orange-arrow-link,
+    .orange-arrow-link img {
+      position: relative;
+      z-index: 999;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="part2">
+    <div class="frame">
+      <div class="legend-goes">Legend goes.....</div>
+      <div class="overlap">
+        <!-- Arrow wrapped in a link to part3.htm -->
+        <a href="part3.html" class="orange-arrow-link">
+          <img
+            class="orange-arrow"
+            src="img/orange-arrow.png"
+            alt="Arrow"
+          />
+        </a>
+
+        <div class="overlap-group">
+          <p class="text-wrapper">
+            due to its fame from conquering the beasts of the jungle
+          </p>
+          <img
+            class="tiger-water"
+            src="img/tiger-water.png"
+            alt="Tiger"
+          />
+          <p class="subtitle">
+            the tiger became the King of Animals at the very beginning
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fallback JS navigation if the link isn’t working for some reason -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const link = document.querySelector(".orange-arrow-link");
+      if (link) {
+        link.addEventListener("click", (e) => {
+          // If the anchor doesn't navigate, force it in JS
+          window.location.href = link.getAttribute("href");
+        });
+      }
+    });
+  </script>
+</body>
+</html>
